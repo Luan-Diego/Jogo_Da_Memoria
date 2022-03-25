@@ -5,12 +5,12 @@
  */
 package Telas;
 
-import Classes.Sound;
-import static Classes.Sound.nromusic;
+import Classes.Som;
 import java.awt.Image;
-import java.awt.event.KeyEvent;
 import java.io.File;
 import java.util.Random;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -347,7 +347,6 @@ public class Game extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         labels();  
         musica();
@@ -373,74 +372,74 @@ public class Game extends javax.swing.JFrame {
   
     }//GEN-LAST:event_formWindowOpened
     private void musica(){
-        Classes.Sound.nromusic = rand.nextInt(2);
+        Som.nromusic = rand.nextInt(2);
 
-        if(Classes.Sound.nromusic == 0){
+        if(Som.nromusic == 0){
      
-            Classes.Sound.nome = "Travelers";
-            player.setText(Classes.Sound.nome);
+            Som.nome = "Travelers";
+            player.setText(Som.nome);
             
-            Classes.Sound.fund0.play();
+            Som.tocarmusica(Som.fund0);
          
         }
      
-        if(Classes.Sound.nromusic == 1){
+        if(Som.nromusic == 1){
      
-            Classes.Sound.nome = "14.3 Billion Years";
-            player.setText(Classes.Sound.nome);
+            Som.nome = "14.3 Billion Years";
+            player.setText(Som.nome);
             
-            Classes.Sound.fund1.play();
+            Som.tocarmusica(Som.fund1);
          
         }
     }
     
     private void playmusic(){
         
-        if(Classes.Sound.statusmusica.equals("pause")){
+        if(Som.statusmusica.equals("pause")){
             
-            if(Classes.Sound.nromusic == 0){
+            if(Som.nromusic == 0){
 
-                Classes.Sound.fund0.play();
+                Som.tocarmusica(Som.fund0);;
                 
                 ImageIcon playicon = new ImageIcon(new ImageIcon("build/classes/game icon/pausa.png").getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT));
                 play.setIcon(playicon);
                 
-                Classes.Sound.statusmusica = "tocando";
+                Som.statusmusica = "tocando";
 
             }
 
-            if(Classes.Sound.nromusic == 1){
+            if(Som.nromusic == 1){
 
-                Classes.Sound.fund1.play();
+                Som.tocarmusica(Som.fund1);
                 
                 ImageIcon playicon = new ImageIcon(new ImageIcon("build/classes/game icon/pausa.png").getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT));
                 play.setIcon(playicon);
                 
-                Classes.Sound.statusmusica = "tocando";
+                Som.statusmusica = "tocando";
 
             }
         }
-        else if(Classes.Sound.statusmusica.equals("tocando")){
+        else if(Som.statusmusica.equals("tocando")){
             
-            if(Classes.Sound.nromusic == 0){
+            if(Som.nromusic == 0){
 
-                Classes.Sound.fund0.stop();
+                Som.pausarmusica();
                 
                 ImageIcon playicon = new ImageIcon(new ImageIcon("build/classes/game icon/play.png").getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT));
                 play.setIcon(playicon);
                 
-                Classes.Sound.statusmusica = "pause";
+                Som.statusmusica = "pause";
 
             }
 
-            if(Classes.Sound.nromusic == 1){
+            if(Som.nromusic == 1){
 
-                Classes.Sound.fund1.stop();
+                Som.pausarmusica();
                 
                 ImageIcon playicon = new ImageIcon(new ImageIcon("build/classes/game icon/play.png").getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT));
                 play.setIcon(playicon);
                 
-                Classes.Sound.statusmusica = "pause";
+                Som.statusmusica = "pause";
 
             }
         }
@@ -448,27 +447,27 @@ public class Game extends javax.swing.JFrame {
     
     private void proximamusica(){
         
-        if(Classes.Sound.nromusic == 0){
+        if(Som.nromusic == 0){
                 
-            Classes.Sound.fund0.stop();
-            Classes.Sound.fund1.play();
+            Som.pausarmusica();
+            Som.tocarmusica(Som.fund1);
             
-            Classes.Sound.nome = "14.3 Billion Years";
-            player.setText(Classes.Sound.nome);
+            Som.nome = "14.3 Billion Years";
+            player.setText(Som.nome);
             
-            Classes.Sound.nromusic = 1;
+            Som.nromusic = 1;
          
         }
      
-        else if(Classes.Sound.nromusic == 1){
+        else if(Som.nromusic == 1){
 
-            Classes.Sound.fund1.stop();
-            Classes.Sound.fund0.play();
+            Som.pausarmusica();
+            Som.tocarmusica(Som.fund0);
             
-            Classes.Sound.nome = "Travelers";
-            player.setText(Classes.Sound.nome);
+            Som.nome = "Travelers";
+            player.setText(Som.nome);
             
-            Classes.Sound.nromusic = 0;
+            Som.nromusic = 0;
             
         }    
     }
@@ -518,7 +517,6 @@ public class Game extends javax.swing.JFrame {
             }
         }
     }
-
     private void wallpaperKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_wallpaperKeyPressed
              
     }//GEN-LAST:event_wallpaperKeyPressed
@@ -620,10 +618,9 @@ public class Game extends javax.swing.JFrame {
 
     private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
         dispose();
-        Sound.fund0.stop();
-        Sound.fund1.stop();
+        Som.pausarmusica();
     }//GEN-LAST:event_exitMouseClicked
-
+    
     private void sortMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sortMouseClicked
         status = "sorteado";
         labels();
