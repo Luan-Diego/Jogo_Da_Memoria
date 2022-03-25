@@ -448,26 +448,46 @@ public class Game extends javax.swing.JFrame {
     private void proximamusica(){
         
         if(Som.nromusic == 0){
+            if(Som.statusmusica.equals("pause")){
                 
-            Som.pausarmusica();
-            Som.tocarmusica(Som.fund1);
+                Som.nome = "14.3 Billion Years";
+                player.setText(Som.nome);
+
+                Som.nromusic = 1; 
+                
+            }else{
             
-            Som.nome = "14.3 Billion Years";
-            player.setText(Som.nome);
-            
-            Som.nromusic = 1;
+                Som.pausarmusica();
+                Som.tocarmusica(Som.fund1);
+
+                Som.nome = "14.3 Billion Years";
+                player.setText(Som.nome);
+
+                Som.nromusic = 1;
+            }
          
         }
      
         else if(Som.nromusic == 1){
 
-            Som.pausarmusica();
-            Som.tocarmusica(Som.fund0);
+            if(Som.statusmusica.equals("pause")){
+                
+                Som.nome = "Travelers";
+                player.setText(Som.nome);
+
+                Som.nromusic = 0;
             
-            Som.nome = "Travelers";
-            player.setText(Som.nome);
-            
-            Som.nromusic = 0;
+            }else{
+                
+                Som.pausarmusica();
+                Som.tocarmusica(Som.fund0);
+
+                Som.nome = "Travelers";
+                player.setText(Som.nome);
+
+                Som.nromusic = 0;
+                
+            }
             
         }    
     }
@@ -642,14 +662,21 @@ public class Game extends javax.swing.JFrame {
         if(status.equals("iniciado")){
             if(clicks == 0)
             {
-                label1 = img1;
-                
-                nro1 = img1.getText();
-                
-                ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
-                img1.setIcon(imgPhoto);
-                
-                clicks++;
+                if(img1.getIcon()== null){  
+                    
+                    JOptionPane.showMessageDialog(null, "Você já acertou esse aqui!"); 
+                    
+                }
+                else{
+                    label1 = img1;
+
+                    nro1 = img1.getText();
+
+                    ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
+                    img1.setIcon(imgPhoto);
+
+                    clicks++;
+                }
             }
             else
             {
@@ -671,14 +698,21 @@ public class Game extends javax.swing.JFrame {
         if(status.equals("iniciado")){
             if(clicks == 0)
             {
-                label1 = img2;
-                
-                nro1 = img2.getText();
-                
-                ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
-                img2.setIcon(imgPhoto);
-                
-                clicks++;
+                if(img2.getIcon()== null){  
+                    
+                    JOptionPane.showMessageDialog(null, "Você já acertou esse aqui!"); 
+                    
+                }
+                else{
+                    label1 = img2;
+
+                    nro1 = img2.getText();
+
+                    ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
+                    img2.setIcon(imgPhoto);
+
+                    clicks++;
+                }
             }
             else
             {
@@ -700,14 +734,22 @@ public class Game extends javax.swing.JFrame {
         if(status.equals("iniciado")){
             if(clicks == 0)
             {
-                label1 = img3;
+                if(img3.getIcon()== null){  
+                    
+                    JOptionPane.showMessageDialog(null, "Você já acertou esse aqui!"); 
+                    
+                }
+                else{
+                    
+                    label1 = img3;
 
-                nro1 = img3.getText();
-                
-                ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
-                img3.setIcon(imgPhoto);
-                
-                clicks++;
+                    nro1 = img3.getText();
+
+                    ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
+                    img3.setIcon(imgPhoto);
+
+                    clicks++;
+                }
             }
             else
             {
@@ -729,14 +771,22 @@ public class Game extends javax.swing.JFrame {
         if(status.equals("iniciado")){
             if(clicks == 0)
             {
-                label1 = img4;
+                if(img4.getIcon()== null){  
+                    
+                    JOptionPane.showMessageDialog(null, "Você já acertou esse aqui!"); 
+                    
+                }
+                else{
+                    
+                    label1 = img4;
 
-                nro1 = img4.getText();
-                
-                ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
-                img4.setIcon(imgPhoto);
-                
-                clicks++;
+                    nro1 = img4.getText();
+
+                    ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
+                    img4.setIcon(imgPhoto);
+
+                    clicks++;
+                }
             }
             else
             {
@@ -758,14 +808,22 @@ public class Game extends javax.swing.JFrame {
         if(status.equals("iniciado")){
             if(clicks == 0)
             {
-                label1 = img5;
+                if(img5.getIcon()== null){  
+                    
+                    JOptionPane.showMessageDialog(null, "Você já acertou esse aqui!"); 
+                    
+                }
+                else{
+                    
+                    label1 = img5;
 
-                nro1 = img5.getText();
-                
-                ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
-                img5.setIcon(imgPhoto);
-                
-                clicks++;
+                    nro1 = img5.getText();
+
+                    ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
+                    img5.setIcon(imgPhoto);
+
+                    clicks++;
+                }
             }
             else
             {
@@ -787,14 +845,22 @@ public class Game extends javax.swing.JFrame {
         if(status.equals("iniciado")){
             if(clicks == 0)
             {
-                label1 = img6;
+                if(img6.getIcon()== null){  
+                    
+                    JOptionPane.showMessageDialog(null, "Você já acertou esse aqui!"); 
+                    
+                }
+                else{
 
-                nro1 = img6.getText();
-                
-                ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
-                img6.setIcon(imgPhoto);
-                
-                clicks++;
+                    label1 = img6;
+
+                    nro1 = img6.getText();
+
+                    ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
+                    img6.setIcon(imgPhoto);
+
+                    clicks++;
+                }
             }
             else
             {
@@ -816,14 +882,22 @@ public class Game extends javax.swing.JFrame {
         if(status.equals("iniciado")){
             if(clicks == 0)
             {
-                label1 = img7;
+                if(img7.getIcon()== null){  
+                    
+                    JOptionPane.showMessageDialog(null, "Você já acertou esse aqui!"); 
+                    
+                }
+                else{
+                    
+                    label1 = img7;
 
-                nro1 = img7.getText();
-                
-                ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
-                img7.setIcon(imgPhoto);                
-                
-                clicks++;
+                    nro1 = img7.getText();
+
+                    ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
+                    img7.setIcon(imgPhoto);                
+
+                    clicks++;
+                }
             }
             else
             {
@@ -845,14 +919,22 @@ public class Game extends javax.swing.JFrame {
         if(status.equals("iniciado")){
             if(clicks == 0)
             {
-                label1 = img8;
+                if(img8.getIcon()== null){  
+                    
+                    JOptionPane.showMessageDialog(null, "Você já acertou esse aqui!"); 
+                    
+                }
+                else{
+                    
+                    label1 = img8;
 
-                nro1 = img8.getText();
-                
-                ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
-                img8.setIcon(imgPhoto);
-                
-                clicks++;
+                    nro1 = img8.getText();
+
+                    ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
+                    img8.setIcon(imgPhoto);
+
+                    clicks++;
+                }
             }
             else
             {
@@ -874,14 +956,22 @@ public class Game extends javax.swing.JFrame {
         if(status.equals("iniciado")){
             if(clicks == 0)
             {
-                label1 = img11;
-                
-                nro1 = img11.getText();
-                
-                ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
-                img11.setIcon(imgPhoto);
-                
-                clicks++;
+                if(img11.getIcon()== null){  
+                    
+                    JOptionPane.showMessageDialog(null, "Você já acertou esse aqui!"); 
+                    
+                }
+                else{
+
+                    label1 = img11;
+
+                    nro1 = img11.getText();
+
+                    ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
+                    img11.setIcon(imgPhoto);
+
+                    clicks++;
+                }
             }
             else
             {
@@ -903,14 +993,22 @@ public class Game extends javax.swing.JFrame {
         if(status.equals("iniciado")){
             if(clicks == 0)
             {
-                label1 = img9;
-                
-                nro1 = img9.getText();
-                
-                ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
-                img9.setIcon(imgPhoto);
-                
-                clicks++;
+                if(img9.getIcon()== null){  
+                    
+                    JOptionPane.showMessageDialog(null, "Você já acertou esse aqui!"); 
+                    
+                }
+                else{
+
+                    label1 = img9;
+
+                    nro1 = img9.getText();
+
+                    ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
+                    img9.setIcon(imgPhoto);
+
+                    clicks++;
+                }
             }
             else
             {
@@ -932,14 +1030,22 @@ public class Game extends javax.swing.JFrame {
         if(status.equals("iniciado")){
             if(clicks == 0)
             {
-                label1 = img10;
-                
-                nro1 = img10.getText();
-                
-                ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
-                img10.setIcon(imgPhoto);
-                
-                clicks++;
+                if(img10.getIcon()== null){  
+                    
+                    JOptionPane.showMessageDialog(null, "Você já acertou esse aqui!"); 
+                    
+                }
+                else{
+
+                    label1 = img10;
+
+                    nro1 = img10.getText();
+
+                    ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
+                    img10.setIcon(imgPhoto);
+
+                    clicks++;
+                }
             }
             else
             {
@@ -961,14 +1067,22 @@ public class Game extends javax.swing.JFrame {
         if(status.equals("iniciado")){
             if(clicks == 0)
             {
-                label1 = img12;
-                
-                nro1 = img12.getText();
-                
-                ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
-                img12.setIcon(imgPhoto);
-                
-                clicks++;
+                if(img12.getIcon()== null){  
+                    
+                    JOptionPane.showMessageDialog(null, "Você já acertou esse aqui!"); 
+                    
+                }
+                else{
+
+                    label1 = img12;
+
+                    nro1 = img12.getText();
+
+                    ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
+                    img12.setIcon(imgPhoto);
+
+                    clicks++;
+                }
             }
             else
             {
@@ -990,14 +1104,22 @@ public class Game extends javax.swing.JFrame {
         if(status.equals("iniciado")){
             if(clicks == 0)
             {
-                label1 = img13;
-                
-                nro1 = img13.getText();
-                
-                ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
-                img13.setIcon(imgPhoto);
-                
-                clicks++;
+                if(img13.getIcon()== null){  
+                    
+                    JOptionPane.showMessageDialog(null, "Você já acertou esse aqui!"); 
+                    
+                }
+                else{
+                    
+                    label1 = img13;
+
+                    nro1 = img13.getText();
+
+                    ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
+                    img13.setIcon(imgPhoto);
+
+                    clicks++;
+                }
             }
             else
             {
@@ -1019,14 +1141,22 @@ public class Game extends javax.swing.JFrame {
         if(status.equals("iniciado")){
             if(clicks == 0)
             {
-                label1 = img14;
-                
-                nro1 = img14.getText();
-                
-                ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
-                img14.setIcon(imgPhoto);
-                
-                clicks++;
+                if(img14.getIcon()== null){  
+                    
+                    JOptionPane.showMessageDialog(null, "Você já acertou esse aqui!"); 
+                    
+                }
+                else{
+
+                    label1 = img14;
+
+                    nro1 = img14.getText();
+
+                    ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
+                    img14.setIcon(imgPhoto);
+
+                    clicks++;
+                }
             }
             else
             {
@@ -1048,14 +1178,22 @@ public class Game extends javax.swing.JFrame {
         if(status.equals("iniciado")){
             if(clicks == 0)
             {
-                label1 = img15;
-                
-                nro1 = img15.getText();
-                
-                ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
-                img15.setIcon(imgPhoto);
-                
-                clicks++;
+                if(img15.getIcon()== null){  
+                    
+                    JOptionPane.showMessageDialog(null, "Você já acertou esse aqui!"); 
+                    
+                }
+                else{
+
+                    label1 = img15;
+
+                    nro1 = img15.getText();
+
+                    ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
+                    img15.setIcon(imgPhoto);
+
+                    clicks++;
+                }
             }
             else
             {
@@ -1077,14 +1215,22 @@ public class Game extends javax.swing.JFrame {
         if(status.equals("iniciado")){
             if(clicks == 0)
             {
-                label1 = img16;
-                
-                nro1 = img16.getText();
-                
-                ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
-                img16.setIcon(imgPhoto);
-                
-                clicks++;
+                if(img16.getIcon()== null){  
+                    
+                    JOptionPane.showMessageDialog(null, "Você já acertou esse aqui!"); 
+                    
+                }
+                else{
+
+                    label1 = img16;
+
+                    nro1 = img16.getText();
+
+                    ImageIcon imgPhoto = new ImageIcon(new ImageIcon("build/classes/iconesmemoria/" + imagens[Integer.parseInt(nro1)]).getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT));
+                    img16.setIcon(imgPhoto);
+
+                    clicks++;
+                }
             }
             else
             {
